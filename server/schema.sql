@@ -4,7 +4,7 @@ use lemonloft;
 
 CREATE TABLE listings (
     listing_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    description VARCHAR(100) NOT NULL
+    description VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE listing_images (

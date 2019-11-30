@@ -20,10 +20,13 @@
   },
   "homepage": "https://github.com/leokyeung/photo-gallery-module#readme",
   "dependencies": {
+    "eslint": "^6.7.2",
     "express": "^4.17.1",
+    "mysql": "^2.17.1",
     "nodemon": "^2.0.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "sequelize": "^5.21.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
