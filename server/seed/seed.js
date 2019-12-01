@@ -7,7 +7,7 @@ var randomImage = (listingNumber) => {
     var array = [];
     for (var i = 0; i <= 9; i++) {
         //helper function which generates random picture
-        let randomNum = Math.floor(Math.random() * 142) + 1;
+        let randomNum = Math.floor(Math.random() * 127) + 1;
         let imgLink = `https://lemonloft-gallery.s3-us-west-1.amazonaws.com/images/img${randomNum}.jpg`;
         let adj = faker.commerce.productAdjective();
         let roomSynonyms = ['room', 'space', 'area', 'loft'];
