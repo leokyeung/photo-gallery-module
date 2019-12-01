@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('lemonloft', 'loftuser', 'password', {
+var sequelize = new Sequelize('lemonloft', 'root', '', {
     host: 'localhost',
-    dialect: mysql,
+    dialect: 'mysql',
     pool: {
         max: 5,
         min: 0,
@@ -20,7 +20,7 @@ sequelize
   });
 
 const Listing = sequelize.define('listings', {
-    'listing_id': {
+    'id': {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -30,6 +30,8 @@ const Listing = sequelize.define('listings', {
         type: Sequelize.STRING(200),
         allowNull: false
     }
+}, {
+    timestamps: false
 });
 
 const Listing_Gallery = sequelize.define('listing_images', {
@@ -50,6 +52,8 @@ const Listing_Gallery = sequelize.define('listing_images', {
         type: Sequelize.INTEGER,
     }
 
+}, {
+    timestamps: false
 });
 
 module.exports.db = sequelize;
