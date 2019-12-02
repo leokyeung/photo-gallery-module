@@ -10,5 +10,16 @@ module.exports = {
             }
         })
 
+    }),
+    getImages : ((req, res) => {
+        Models.getImages((err, data) => {
+            if (err) {
+                res.status(400).send(err);
+            } else {
+                res.send(data);
+            }
+        })
+
     })
+
 }

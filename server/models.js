@@ -18,6 +18,17 @@ module.exports = {
                 callback(null, results)
             }
         });
+    },
+    getImages: (callback) => {
+        const query = `select * from listing_images where listing_id = 1;`
+        connection.query(query, function (err, results) {
+            if (err) {
+                callback(err);
+            } else {
+                callback(null, results)
+            }
+        });
     }
+
 
 }

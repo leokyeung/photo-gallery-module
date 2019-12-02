@@ -6,8 +6,12 @@ const controllers = require('./controllers.js')
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')))
 
-app.get('/', (req, res) => {
+app.get('/listings', (req, res) => {
     controllers.getListings(req,res)
+})
+
+app.get('/listings/pictures', (req, res) => {
+    controllers.getImages(req,res)
 })
 
 app.listen(port, () => console.log(`Leo app listening on port ${port}!`))
