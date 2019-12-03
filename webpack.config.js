@@ -1,4 +1,5 @@
 const path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SRC_DIR = path.resolve(__dirname, './client/src/components')
 
 module.exports = {

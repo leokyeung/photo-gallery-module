@@ -7,6 +7,19 @@ class Gallery extends React.Component {
         super(props);
     }
 
+    // darken (e) {
+
+    //     console.log(e.target.className)
+
+
+        // array = ['mainImage', 'secondImage', 'thirdImage', 'fourthImage', 'fifthImage']
+        // for ( var i = 0; i < array.length;i++){
+        //     if (e.target.value !== array[i]){
+        //         $(`".${e.target.value}"`).addClass("darken")
+        //     }
+        // }
+    // }
+
     darken () {
         $(".secondImage, .thirdImage, .fourthImage, .fifthImage").addClass("darken");
     }
@@ -48,7 +61,7 @@ class Gallery extends React.Component {
             return (
 
                 <div className='gallery'>
-                    <div onMouseEnter={this.darken} onMouseLeave={this.brighten} className="item mainImage">
+                    <div onMouseOver={this.darken} onMouseLeave={this.brighten} className="item mainImage">
                         <a href={this.props.pictures[0].image_url} title={this.props.pictures[0].image_info}>
                             <img src={this.props.pictures[0].image_url} alt={this.props.pictures[0].image_info} />
                         </a>
