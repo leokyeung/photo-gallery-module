@@ -30,6 +30,7 @@ class App extends React.Component {
       <div>
 
       <Gallery pictures={this.state.galleries}/>
+
       </div>
     )
   }

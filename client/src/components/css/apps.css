@@ -35,12 +35,14 @@ img {
     grid-column: span 2;
     background-size: cover;
     background-position: center;
+    /* filter: brightness(50%);  */
 }
 
 .mainImage:hover img{
     cursor : pointer;
     transform: scale(1.1);
 }
+
 
 .secondImage:hover img{
     cursor : pointer;
@@ -60,5 +62,9 @@ img {
 .fifthImage:hover img{
     cursor : pointer;
     transform: scale(1.1);
+}
+
+.darken {
+    filter: brightness(70%);
 }
 
