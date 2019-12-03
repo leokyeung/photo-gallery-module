@@ -1,35 +1,38 @@
 import React from 'react'
-import './css/apps.css'
+import Gallery from './Gallery.jsx'
 
 class App extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        galleries: []
-      };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      galleries: []
+    };
+  }
 
-    componentDidMount(){
-      $.ajax({
-        type: "GET",
-        url: '/listings/pictures',
-        dataType: 'json',
-        success: (data) => {
-          this.setState({
-            galleries: data
-          })
-        }
-      });
-    }
-  
-    render() {
-      return (
-        <div class='title1'>
-          <h1>Hello, world!</h1>
-    
-        </div>
-      );
-    }
+  componentDidMount() {
+    $.ajax({
+      type: "GET",
+      url: '/listings/pictures',
+      dataType: 'json',
+      success: (data) => {
+        this.setState({
+          galleries: data
+        })
+      }
+    });
+  }
+
+  render() {
+
+
+    return (
+
+      <div>
+
+      <Gallery pictures={this.state.galleries}/>
+      </div>
+    )
+  }
 }
 
 export default App
