@@ -1,11 +1,15 @@
-* {
+:global *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-*:before, *:after {
-  box-sizing: border-box;
+:global *::before {
+    box-sizing: border-box;
+}
+
+:global *::after {
+    box-sizing: border-box;
 }
 
 .gallery {
@@ -35,14 +39,12 @@ img {
     grid-column: span 2;
     background-size: cover;
     background-position: center;
-    /* filter: brightness(50%);  */
 }
 
 .mainImage:hover img{
     cursor : pointer;
     transform: scale(1.1);
 }
-
 
 .secondImage:hover img{
     cursor : pointer;

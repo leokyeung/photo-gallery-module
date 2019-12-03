@@ -1,5 +1,4 @@
 const path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SRC_DIR = path.resolve(__dirname, './client/src/components')
 
 module.exports = {
@@ -21,9 +20,17 @@ module.exports = {
         }
       },
       {
-        test:/\.css$/,
-        include: SRC_DIR,
-        use:['style-loader','css-loader']
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
       }
     ]
   }

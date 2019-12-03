@@ -1,7 +1,6 @@
 import React from 'react'
-import { findDOMNode} from 'react-dom'
-import './css/apps.css'
-
+import styles from './css/apps.css'
+console.log(styles);
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
@@ -21,38 +20,38 @@ class Gallery extends React.Component {
     // }
 
     darken () {
-        $(".secondImage, .thirdImage, .fourthImage, .fifthImage").addClass("darken");
+        $(".secondImage, .thirdImage, .fourthImage, .fifthImage").addClass(`${styles.darken}`);
     }
     brighten (){
-        $(".secondImage, .thirdImage, .fourthImage, .fifthImage").removeClass("darken");
+        $(".secondImage, .thirdImage, .fourthImage, .fifthImage").removeClass(`${styles.darken}`);
     }
 
     darken1 () {
-        $(".mainImage, .thirdImage, .fourthImage, .fifthImage").addClass("darken");
+        $(".mainImage, .thirdImage, .fourthImage, .fifthImage").addClass(`${styles.darken}`);
     }
     brighten1 (){
-        $(".mainImage, .thirdImage, .fourthImage, .fifthImage").removeClass("darken");
+        $(".mainImage, .thirdImage, .fourthImage, .fifthImage").removeClass(`${styles.darken}`);
     }
 
     darken2 () {
-        $(".secondImage, .mainImage, .fourthImage, .fifthImage").addClass("darken");
+        $(".secondImage, .mainImage, .fourthImage, .fifthImage").addClass(`${styles.darken}`);
     }
     brighten2 (){
-        $(".secondImage, .mainImage, .fourthImage, .fifthImage").removeClass("darken");
+        $(".secondImage, .mainImage, .fourthImage, .fifthImage").removeClass(`${styles.darken}`);
     }
 
     darken3 () {
-        $(".secondImage, .thirdImage, .mainImage, .fifthImage").addClass("darken");
+        $(".secondImage, .thirdImage, .mainImage, .fifthImage").addClass(`${styles.darken}`);
     }
     brighten3 (){
-        $(".secondImage, .thirdImage, .mainImage, .fifthImage").removeClass("darken");
+        $(".secondImage, .thirdImage, .mainImage, .fifthImage").removeClass(`${styles.darken}`);
     }
 
     darken4 () {
-        $(".secondImage, .thirdImage, .fourthImage, .mainImage").addClass("darken");
+        $(".secondImage, .thirdImage, .fourthImage, .mainImage").addClass(`${styles.darken}`);
     }
     brighten4 (){
-        $(".secondImage, .thirdImage, .fourthImage, .mainImage").removeClass("darken");
+        $(".secondImage, .thirdImage, .fourthImage, .mainImage").removeClass(`${styles.darken}`);
     }
 
     render() {
@@ -60,28 +59,28 @@ class Gallery extends React.Component {
         if (this.props.pictures.length > 0) {
             return (
 
-                <div className='gallery'>
-                    <div onMouseOver={this.darken} onMouseLeave={this.brighten} className="item mainImage">
+                <div className={styles.gallery}>
+                    <div onMouseOver={this.darken} onMouseLeave={this.brighten} className={`${styles.item} ${styles.mainImage} mainImage`}>
                         <a href={this.props.pictures[0].image_url} title={this.props.pictures[0].image_info}>
                             <img src={this.props.pictures[0].image_url} alt={this.props.pictures[0].image_info} />
                         </a>
                     </div>
-                    <div onMouseEnter={this.darken1} onMouseLeave={this.brighten1} className="item secondImage">
+                    <div onMouseEnter={this.darken1} onMouseLeave={this.brighten1} className={`${styles.item} ${styles.secondImage} secondImage`}>
                         <a href={this.props.pictures[1].image_url} title={this.props.pictures[1].image_info}>
                             <img src={this.props.pictures[1].image_url} alt={this.props.pictures[1].image_info} />
                         </a>
                     </div>
-                    <div onMouseEnter={this.darken2} onMouseLeave={this.brighten2} className="item thirdImage">
+                    <div onMouseEnter={this.darken2} onMouseLeave={this.brighten2} className={`${styles.item} ${styles.thirdImage} thirdImage`}>
                         <a href={this.props.pictures[2].image_url} title={this.props.pictures[2].image_info}>
                             <img src={this.props.pictures[2].image_url} alt={this.props.pictures[2].image_info} />
                         </a>
                     </div>
-                    <div onMouseEnter={this.darken3} onMouseLeave={this.brighten3} className="item fourthImage">
+                    <div onMouseEnter={this.darken3} onMouseLeave={this.brighten3} className={`${styles.item} ${styles.fourthImage} fourthImage`}>
                         <a href={this.props.pictures[3].image_url} title={this.props.pictures[3].image_info}>
                             <img src={this.props.pictures[3].image_url} alt={this.props.pictures[3].image_info} />
                         </a>
                     </div>
-                    <div onMouseEnter={this.darken4} onMouseLeave={this.brighten4} className="item fifthImage">
+                    <div onMouseEnter={this.darken4} onMouseLeave={this.brighten4} className={`${styles.item} ${styles.fifthImage} fifthImage`}>
                         <a href={this.props.pictures[4].image_url} title={this.props.pictures[4].image_info}>
                             <img src={this.props.pictures[4].image_url} alt={this.props.pictures[4].image_info} />
                         </a>
@@ -95,4 +94,5 @@ class Gallery extends React.Component {
         }
     }
 }
-export default Gallery
+
+export default Gallery;
