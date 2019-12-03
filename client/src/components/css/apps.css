@@ -1,0 +1,72 @@
+:global *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:global *::before {
+    box-sizing: border-box;
+}
+
+:global *::after {
+    box-sizing: border-box;
+}
+
+.gallery {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.item {
+    background: #eee;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+img {
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mainImage {
+    grid-row: span 2;
+    grid-column: span 2;
+    background-size: cover;
+    background-position: center;
+}
+
+.mainImage:hover img{
+    cursor : pointer;
+    transform: scale(1.1);
+}
+
+.secondImage:hover img{
+    cursor : pointer;
+    transform: scale(1.1);
+}
+
+.thirdImage:hover img{
+    cursor : pointer;
+    transform: scale(1.1);
+}
+
+.fourthImage:hover img{
+    cursor : pointer;
+    transform: scale(1.1);
+}
+
+.fifthImage:hover img{
+    cursor : pointer;
+    transform: scale(1.1);
+}
+
+.darken {
+    filter: brightness(70%);
+}
+
