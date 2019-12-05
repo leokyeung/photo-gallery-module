@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './css/apps.css'
-console.log(styles);
+
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
