@@ -14,6 +14,6 @@ app.get('/listings/pictures', (req, res) => {
     controllers.getImages(req,res)
 })
 
-app.listen(port, () => console.log(`Leo app listening on port ${port}!`))
+// app.listen(port, () => console.log(`Leo app listening on port ${port}!`))
 
 module.exports = app
