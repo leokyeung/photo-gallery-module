@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/leokyeung/photo-gallery-module#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.7.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.7.2",
     "express": "^4.17.1",
@@ -47,6 +48,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jest": "^24.9.0",
     "style-loader": "^1.0.1",
+    "supertest": "^4.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
