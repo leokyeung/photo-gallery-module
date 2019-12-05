@@ -34,4 +34,8 @@ describe('Gallery component', () => {
     it('should render one photo in the Fifth Image Section', () => {
         expect(wrapper.find('.fifthImage')).toHaveLength(1);
     });
+
+    it("should have five img source link", () => {
+        expect(wrapper.find("img")).toHaveLength(5);
+     });
 });
