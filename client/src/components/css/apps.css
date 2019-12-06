@@ -1,7 +1,7 @@
-:global *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+:global * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :global *::before {
@@ -28,8 +28,8 @@
 }
 
 img {
-    height: 100%; 
-    width: 100%; 
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -41,28 +41,28 @@ img {
     background-position: center;
 }
 
-.mainImage:hover img{
-    cursor : pointer;
+.mainImage:hover img {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
-.secondImage:hover img{
-    cursor : pointer;
+.secondImage:hover img {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
-.thirdImage:hover img{
-    cursor : pointer;
+.thirdImage:hover img {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
-.fourthImage:hover img{
-    cursor : pointer;
+.fourthImage:hover img {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
-.fifthImage:hover img{
-    cursor : pointer;
+.fifthImage:hover img {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
@@ -70,3 +70,122 @@ img {
     filter: brightness(70%);
 }
 
+/* LIGHTBOX */
+
+/* Modals */
+.col {
+    float: left;
+    width: 55%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 10px 62px 0px 62px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+.modalContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 0 0 0 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Slide */
+.slide {
+    display: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.imageSlide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.modalPreview {
+    width: 50%;
+}
+
+.dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img.modalPreview {
+    opacity: 0.6;
+}
+
+img.active,
+.modalPreview:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+img.hoverShadow {
+    transition: 0.3s;
+}
+
+.hoverShadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  } 
+
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .previous,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .previous:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
