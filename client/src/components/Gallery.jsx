@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import styles from './css/apps.css'
 import Lightbox from './Lightbox.jsx';
 
@@ -78,10 +79,21 @@ class Gallery extends React.Component {
         this.toSlide(n);
     }
 
+    display1 () {
+        console.log("hello")
+        $(".slide1").removeClass(`${styles.none}`)
+        $(".slide2, .slide3").removeClass(`${styles.slide}`);
+    }
+    
+
+
+
     showSlide(n) {
-        const slides = $(".slide");
-        let modalPreviews = $(".modalPreview");
-        console.log(modalPreviews)
+        // grabs all the elements which has this class name
+        const slides = document.getElementsByClassName('slide');
+
+        let modalPreviews = document.getElementsByClassName('modalPreview');
+    
 
         if ( n > slides.length) {
             this.setState({
@@ -95,17 +107,22 @@ class Gallery extends React.Component {
             })
         }
 
+        //set all the slides display to none
         for ( let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none"
         }
 
-        for ( let i = 0; i < modalPreviews. length; i++) {
-            modalPreviews[i].className = modalPreviews[i].className.replace(" active", "");
-        }
-
+        // set the correct slide's style to block
         slides[this.state.slideIndex-1].style.display = "block";
 
-        modalPreviews[this.state.slideIndex - 1].className += " active";
+
+        //set all the modalPreview display to non active
+        for ( let i = 0; i < modalPreviews.length; i++) {
+            modalPreviews[i].style.opacity = 0.6;
+        }
+
+        //set the modal to active on click
+        modalPreviews[this.state.slideIndex - 1].style.opacity = 1;
 
     }
 
@@ -120,22 +137,22 @@ class Gallery extends React.Component {
                             <img src={this.props.pictures[0].image_url} alt={this.props.pictures[0].image_info} />
                         
                     </div>
-                    <div onClick={()=>{this.onClickHandle(2)}} onMouseEnter={this.darken1} onMouseLeave={this.brighten1} className={`${styles.item} ${styles.secondImage} secondImage`}>
+                    <div onClick={()=>{this.onClickHandle(2)}} onMouseEnter={this.darken1} onMouseLeave={this.brighten1} className={`${styles.colSec} ${styles.item} ${styles.secondImage} secondImage`}>
                   
                             <img src={this.props.pictures[1].image_url} alt={this.props.pictures[1].image_info} />
                     
                     </div>
-                    <div onClick={()=>{this.onClickHandle(3)}} onMouseEnter={this.darken2} onMouseLeave={this.brighten2} className={`${styles.item} ${styles.thirdImage} thirdImage`}>
+                    <div onClick={()=>{this.onClickHandle(3)}} onMouseEnter={this.darken2} onMouseLeave={this.brighten2} className={`${styles.colLast} ${styles.item} ${styles.thirdImage} thirdImage`}>
                      
                             <img src={this.props.pictures[2].image_url} alt={this.props.pictures[2].image_info} />
                      
                     </div>
-                    <div onClick={()=>{this.onClickHandle(4)}} onMouseEnter={this.darken3} onMouseLeave={this.brighten3} className={`${styles.item} ${styles.fourthImage} fourthImage`}>
+                    <div onClick={()=>{this.onClickHandle(4)}} onMouseEnter={this.darken3} onMouseLeave={this.brighten3} className={`${styles.colSec} ${styles.item} ${styles.fourthImage} fourthImage`}>
                     
                             <img src={this.props.pictures[3].image_url} alt={this.props.pictures[3].image_info} />
                     
                     </div>
-                    <div onClick={()=>{this.onClickHandle(5)}} onMouseEnter={this.darken4} onMouseLeave={this.brighten4} className={`${styles.item} ${styles.fifthImage} fifthImage`}>
+                    <div onClick={()=>{this.onClickHandle(5)}} onMouseEnter={this.darken4} onMouseLeave={this.brighten4} className={`${styles.colLast} ${styles.item} ${styles.fifthImage} fifthImage`}>
                       
                             <img src={this.props.pictures[4].image_url} alt={this.props.pictures[4].image_info} />
                       
@@ -145,6 +162,7 @@ class Gallery extends React.Component {
                     closeLightBox={this.closeLightBox}
                     changeSlide={this.changeSlide}
                     toSlide={this.toSlide}
+                    display1={this.display1}
                     />
                 </div>
 
